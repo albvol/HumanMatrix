@@ -1,5 +1,9 @@
 # HumanMatrix
-Supporting the Project Manager in the realisation of the Responsibility Assignment Matrix
+Supporting the Project Manager in the realisation of the Responsibility Assignment Matrix (RAM).
+
+GitHub integration: based on the tasks of the RAM the PM can choose the best team components.
+
+![alt text](https://raw.githubusercontent.com/albvol/HumanMatrix/resources/Screen Shot 2018-07-10 at 22.02.37.png)
 
 For more informations check this links:
 https://www.slideshare.net/albertovolpe9/feasibility-study-human-matrix-it-project-management 
@@ -27,7 +31,7 @@ matplotlib
 ``` 
 
 ## Step1
-Import the dbms
+Import the dbms by using the .sql files in the resource folder
 
 ## Step2
 Set the following vars:
