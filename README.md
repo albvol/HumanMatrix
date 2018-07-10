@@ -2,8 +2,7 @@
 Supporting the Project Manager in the realisation of the Responsibility Assignment Matrix (RAM).
 
 GitHub integration: based on the tasks of the RAM the PM can choose the best team components.
-
-[[https://raw.githubusercontent.com/albvol/HumanMatrix/resources/Screen Shot 2018-07-10 at 22.02.37.png|alt=octocat]]
+![Alt text/resources/Screen Shot 2018-07-10 at 22.02.37?raw=true "Dashboard")
 
 For more informations check this links:
 https://www.slideshare.net/albertovolpe9/feasibility-study-human-matrix-it-project-management 
@@ -48,3 +47,8 @@ From the main folder, open the terminal and run the following command:
     FLASK_APP=app.py flask run
     
 ``` 
+
+
+# Other Info
+
+Template based on bootstrap: https://wrappixel.com/demos/admin-templates/admin-pro/main/index2.html (https://wrappixel.com)
