@@ -2,7 +2,6 @@
 Supporting the Project Manager in the realisation of the Responsibility Assignment Matrix (RAM).
 
 GitHub integration: based on the tasks of the RAM the PM can choose the best team components.
-![Alt text/resources/Screen Shot 2018-07-10 at 22.02.37?raw=true "Dashboard")
 
 For more informations check this links:
 https://www.slideshare.net/albertovolpe9/feasibility-study-human-matrix-it-project-management 
