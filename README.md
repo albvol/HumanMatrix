@@ -3,7 +3,7 @@ Supporting the Project Manager in the realisation of the Responsibility Assignme
 
 GitHub integration: based on the tasks of the RAM the PM can choose the best team components.
 
-For more informations check this links:
+For more informations check the following links:
 
 https://www.slideshare.net/albertovolpe9/feasibility-study-human-matrix-it-project-management 
 https://www.slideshare.net/albertovolpe9/business-case-human-matrix-it-project-management 
