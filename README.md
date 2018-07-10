@@ -11,7 +11,7 @@ https://www.slideshare.net/albertovolpe9/project-charter-human-matrix-it-project
 https://www.slideshare.net/albertovolpe9/intermediate-human-matrix-it-project-management 
 https://www.slideshare.net/albertovolpe9/it-project-management-human-matrix
 
-# Fruition of the Story 
+# Installation and Configuration
 
 ## Dependecies
 Flask microframework http://flask.pocoo.org
