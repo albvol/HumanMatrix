@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>HumanMatrix - Overview</title>
+
+    <link href="../static/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="../static/css/pages/Overview.css" rel="stylesheet">
+    <link href="../static/css/colors/default-dark.css" id="theme" rel="stylesheet">
+</head>
+
+<body class="fix-header fix-sidebar card-no-border">
+   <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">HumanMatrix</p>
+        </div>
+    </div>
+    
+    <div id="main-wrapper">
+          <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+              <div class="navbar-header">
+                    <a class="navbar-brand" href="/">
+                        <b>
+                            <img src="../static/assets/images/logo-icon.png" alt="homepage" class="dark-logo" style="width:40px"/>
+                        </b>
+                        <span>&nbsp; HumanMatrix</span>
+                    </a>
+                </div>
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                    </ul>
+                    <ul class="navbar-nav my-lg-0">
+                        <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-dark" href="#"><img src="../static/assets/images/users/11.jpg" alt="user" class="profile-pic" style="width: 45px;"/></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <aside class="left-sidebar">
+            <div class="scroll-sidebar">
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="nav-small-cap">GENERAL</li>
+                        <li> <a class="waves-effect waves-dark" href="/" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Overview</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="logout" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Logout</span></a></li>
+                        
+                        <li class="nav-small-cap">PROJECTS</li>
+                            <li> <a class="waves-effect waves-dark" href="projects" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">List</span></a></li>
+                            <li> <a class="waves-effect waves-dark" href="new-project" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">New</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">Overview</h3>
+                    </div>
+                    <div class="col-md-7 align-self-center">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">HumanMatrix</li>
+                            <li class="breadcrumb-item">Overview</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="card bg-info">
+                            <div class="card-body">
+                                <div class="d-flex no-block">
+                                    <div class="m-r-20 align-self-center"><img src="../static/assets/images/icon/income.png" alt="Income"></div>
+                                    <div class="align-self-center">
+                                        <h6 class="text-white m-t-10 m-b-0">Projects Opened</h6>
+                                        <h2 class="m-t-0 text-white" id="openProjects">{{ opened }}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card bg-success">
+                            <div class="card-body">
+                                <div class="d-flex no-block">
+                                    <div class="m-r-20 align-self-center"><img src="../static/assets/images/icon/expense.png" alt="Income"></div>
+                                    <div class="align-self-center">
+                                        <h6 class="text-white m-t-10 m-b-0">Projects Closed</h6>
+                                        <h2 class="m-t-0 text-white" id="closedProjects">{{ closed }}</h2></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card bg-primary">
+                            <div class="card-body">
+                                <div class="d-flex no-block">
+                                    <div class="m-r-20 align-self-center"><img src="../static/assets/images/icon/assets.png" alt="Income"></div>
+                                    <div class="align-self-center">
+                                        <h6 class="text-white m-t-10 m-b-0">Projects in Evaluation</h6>
+                                        <h2 class="m-t-0 text-white" id="evalProjects">{{ evaluation }}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-7 col-md-7">
+                        <div class="card" style="background: #e9edf2;">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h4 class="card-title"><span class="lstick"></span>Bar</h4>
+                                        <h6 class="card-subtitle">Status of yours projects</h6>
+                                    </div>
+                                </div>
+                                <div class="table-responsive m-t-6">
+                                        {{ image|safe }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5">
+                        <div class="card">
+                            <div class="card-body little-profile text-center">
+                                <div class="pro-img m-t-20"><img src="../static/assets/images/users/11.jpg" alt="user" ></div>
+                                <h3 class="m-b-0">{{ name }}</h3>
+                                <h6 class="text-muted">Project Manager</h6>
+                                <ul class="list-inline soc-pro m-t-30">
+                                    <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="fa fa-facebook-square"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="fa fa-youtube-play"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="text-center bg-light">
+                                <div class="row">
+                                    <div class="col-6  p-20 b-r">
+                                        <h4 class="m-b-0 font-medium">Birthdate</h4><small>{{ birthDate }}</small></div>
+                                    <div class="col-6  p-20">
+                                        <h4 class="m-b-0 font-medium">Email</h4><small>{{ email }}</small></div>
+                                </div>
+                            </div>
+                            <div class="card-body text-center">
+                                <a href="/projects" class="m-t-10 m-b-20 waves-effect waves-dark btn btn-success btn-md btn-rounded">Show Projects</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+    <div id="message-layer" class="message-layer"></div>
+
+   <script src="../static/assets/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap popper Core JavaScript -->
+    <script src="../static/assets/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="../static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="../static/js/perfect-scrollbar.jquery.min.js"></script>
+    <!--Wave Effects -->
+    <script src="../static/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../static/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../static/js/custom.min.js"></script>
+    <script src="../static/js/utils.js"></script>
+    
+    <script src="../static/assets/plugins/chartist-js/dist/chartist.min.js"></script>
+    <script src="../static/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
+    <!--c3 JavaScript -->
+    <script src="../static/assets/plugins/d3/d3.min.js"></script>
+    <script src="../static/assets/plugins/c3-master/c3.min.js"></script>
+    <!-- Chart JS -->
+    <script src="../static/js/Overview.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            get('loadProjects', [], function(data){
+                /*
+                evalProjects = 0;
+                closedProjects = 0;
+                console.log(data);
+                for(i=0; i<data.projects.length; i++)
+                {    
+                    if(data.projects[i][5] == "Closing")
+                            closedProjects++;
+                    else if(data.projects[i][5] == "Evaluation")
+                            evalProjects++;
+                }
+
+                $('#openProjects').html(data.projects.length - closedProjects - evalProjects);
+                $('#closedProjects').html(closedProjects);
+                $('#evalProjects').html(evalProjects);*/
+            })});
+    </script>
+</body>
+
+</html>

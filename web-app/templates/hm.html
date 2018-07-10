@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>HumanMatrix - Project Details</title>
+
+    <link href="../static/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="../static/css/pages/Overview.css" rel="stylesheet">
+    <link href="../static/css/colors/default-dark.css" id="theme" rel="stylesheet">
+</head>
+
+<body class="fix-header fix-sidebar card-no-border">
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">HumanMatrix</p>
+        </div>
+    </div>
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">
+                        <b>
+                            <img src="../static/assets/images/logo-icon.png" alt="homepage" class="dark-logo" style="width:40px"/>
+                        </b>
+                        <span>&nbsp; HumanMatrix</span>
+                    </a>
+                </div>
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                    </ul>
+                    <ul class="navbar-nav my-lg-0">
+                        <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-dark" href="#"><img src="../static/assets/images/users/11.jpg" alt="user" class="profile-pic" style="width: 45px;"/></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <aside class="left-sidebar">
+            <div class="scroll-sidebar">
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="nav-small-cap">GENERAL</li>
+                        <li> <a class="waves-effect waves-dark" href="/" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Home</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="logout" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Logout</span></a></li>
+                        <li class="nav-small-cap">PROJECTS</li>
+                        <li> <a class="waves-effect waves-dark" href="projects" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">List</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="new-project" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">New</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">RAM</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">Planning Phase</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h4 class="card-title"><span class="lstick"></span>Responsibility Assignment Matrix</h4>
+                                        <h6 class="card-subtitle">Import or assign tasks to your employee.</h6>
+                                    </div>
+                                    <div class="ml-auto" style="display: block; width: 100px; height: 20px;cursor:pointer;">
+                                        <a href="javascript: void(0)"><button style="width: 110px; height: 30px; position: relative; top: -5px; left: -5px;" class="pull-right btn btn-sm btn-rounded btn-success" >Upload File</button></a>
+                                        <input type="file" id="fileInput" onchange="importCSV()" id="upload_input" name="upload" style="font-size: 50px; width: 120px; opacity: 0; filter:alpha(opacity=0);  position: relative; top: -40px;; left: -20px" />
+                                        <button class="pull-right btn btn-sm btn-rounded btn-success" style="margin-top:-115px;margin-left:-70px;" onclick="window.location.reload(true);">Refresh</button>
+                                        <button class="pull-right btn btn-sm btn-rounded btn-success" style="margin-top:-115px" onclick="exportCSV()">Export to csv</button>
+                                    </div>
+                                </div>
+                                <div class="table-responsive m-t-20" id="tableTasks">
+                                    {{ table|safe }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row"> 
+                    <div class="col-lg-9 col-md-9">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h4 class="card-title"><span class="lstick"></span>Candidates</h4>
+                                        <h6 class="card-subtitle">Select Task and find employees.</h6>
+                                    </div>
+                                </div>
+                                <div class="table-responsive m-t-20" id="tableTasks">
+                                   <div id="suggestions"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                      
+                    <div class="col-lg-3 col-md-3">
+                            <div class="card" style="background: #e9edf2;">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div>
+                                            <h4 class="card-title"><span class="lstick"></span>Search Configuration</h4>
+                                            <h6 class="card-subtitle">Configuration panel.</h6>
+                                        </div>
+                                        <div class="ml-auto" style="display: block; width: 100px; height: 20px;cursor:pointer;">
+                                            <button class="pull-right btn btn-sm btn-rounded btn-success" onclick="clearAll()">reset filters</button>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive m-t-20" id="tableTasks">
+                                        <table class="table vm no-th-brd no-wrap pro-of-month">
+                                            <thead>
+                                                <tr><th>Type</th><th>Value</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Filters</td>
+                                                    <td id="Filterslist"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Sort by</td>
+                                                    <td>
+                                                        <select id="sort">
+                                                            <option value="followers">Followers</option>
+                                                            <option value="repositories">Repositories</option>
+                                                            <option value="joined">Joined</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Order</td>
+                                                    <td>                                                 
+                                                        <select id="order">
+                                                            <option value="desc">Descending</option>
+                                                            <option value="asc">Ascending</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Show Top</td>
+                                                    <td>                                                 
+                                                        <select id="showTop">
+                                                            <option value="5">5</option>
+                                                            <option value="10">10</option>
+                                                            <option value="15">15</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <div style="display: block; width: 100%; height: 40px;cursor:pointer;">
+                                            <center>
+                                                <button class="pull-right btn btn-sm btn-rounded btn-success" onclick="loadSuggestions()">Show Suggestions</button>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="message-layer" class="message-layer"></div>
+
+
+    <script src="../static/assets/plugins/jquery/jquery.min.js"></script>
+    <script src="../static/assets/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="../static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/js/perfect-scrollbar.jquery.min.js"></script>
+
+    <script src="../static/js/sidebarmenu.js"></script>
+    <script src="../static/js/custom.min.js"></script>
+    <script src="../static/js/utils.js"></script>
+
+
+    <script type="text/javascript">
+        filterList = []
+        function addFilter(value){
+            if($.inArray(value, filterList) == -1){
+                filterList.push(value);
+                $('#Filterslist').append('<button style="float:left;margin-top:10px;margin-left:5px;margin-right:5px;" class="pull-right btn btn-sm btn-rounded btn-success" >'+value+'</button>');
+            }
+        }
+
+        function clearAll(){
+            filterList = [];
+            $('#Filterslist').html('');
+            $('#suggestions').html('');
+        }
+        function importCSV()
+        {
+            var fileInput = document.getElementById('fileInput');
+            var file = fileInput.files[0];
+            var reader = new FileReader();
+            
+            reader.readAsText(file);
+            reader.onload = function (e) {
+                
+                post('tasks/csv/import',
+                        {'value': reader.result,
+                        'projectID': window.location.search.substr(1).replace("projectID=","")
+                        }, 
+                        function(data){}, function(data){});
+            }
+        }
+
+        function loadSuggestions(){
+            
+            if(filterList.length > 0){
+                $('#suggestions').html('loading...');
+                get('github/loadSuggestions', 
+                    'projectID='+window.location.search.substr(1).replace("projectID=","")+'&filters='+filterList+"&sort="+document.getElementById("sort").value+"&order="+document.getElementById("order").value+"&showTop="+document.getElementById("showTop").value,
+                    function(data){
+                        $('#suggestions').html(data.table);
+                    }, function(data){
+                        console.log(data);
+                    })
+            }else{
+                $('#suggestions').html('Please select keys from RAM...');
+            }
+        }
+        
+        function addToTeam(githubID, projectID){
+            post('github/addTeamMember',
+                {'githubID':githubID,
+                'projectID':projectID},
+                function(data){
+                    console.log(data);
+                }, function(data){
+                    console.log(data);
+                })
+        }
+
+        function updateRole(githubname, taskID, projectID, selectObj){
+            if(selectObj.value != 0){
+                post('ram/update',{
+                    'githubname': githubname,
+                    'taskID': taskID, 
+                    'roleID': selectObj.value,
+                    'projectID': projectID
+                },
+                function(data){
+                    console.log(data);
+                },
+                function(data){
+                    console.log(data);
+                });
+
+            }else{
+                console.log(0)
+            }
+        }
+
+        function exportCSV(){
+            window.location = "http://127.0.0.1:5000/ram/export?projectID="+window.location.search.substr(1).replace("projectID=","")
+        }
+    </script>
+</body>
+
+</html>

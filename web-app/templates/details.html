@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>HumanMatrix - Project Details</title>
+
+    <link href="../static/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="../static/css/pages/Overview.css" rel="stylesheet">
+    <link href="../static/css/colors/default-dark.css" id="theme" rel="stylesheet">
+</head>
+
+<body class="fix-header fix-sidebar card-no-border">
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">HumanMatrix</p>
+        </div>
+    </div>
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">
+                        <b>
+                            <img src="../static/assets/images/logo-icon.png" alt="homepage" class="dark-logo" style="width:40px"/>
+                        </b>
+                        <span>&nbsp; HumanMatrix</span>
+                    </a>
+                </div>
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                    </ul>
+                    <ul class="navbar-nav my-lg-0">
+                        <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect waves-dark" href="#"><img src="../static/assets/images/users/11.jpg" alt="user" class="profile-pic" style="width: 45px;"/></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <aside class="left-sidebar">
+            <div class="scroll-sidebar">
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="nav-small-cap">GENERAL</li>
+                        <li> <a class="waves-effect waves-dark" href="/" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Home</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="logout" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Logout</span></a></li>
+                        <li class="nav-small-cap">PROJECTS</li>
+                        <li> <a class="waves-effect waves-dark" href="projects" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">List</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="new-project" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">New</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Project</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">Project Details</h3>
+                    </div>
+                </div>
+                <!--div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex">{{ plot|safe }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div-->
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h4 class="card-title"><span class="lstick"></span>Conceptual</h4>
+                                    </div>
+                                    <div class="ml-auto" style="display: block; width: 50px; height: 20px;cursor:pointer;">
+                                        <button class="pull-right btn btn-sm btn-rounded btn-success" onclick="updateDate('conceptual')">Done</button>
+                                    </div>
+                                </div>
+                                <div class="table-responsive m-t-20" id="tableTasks">
+                                    <table class="table vm no-th-brd no-wrap pro-of-month">
+                                        <thead>
+                                            <tr>
+                                                <th>Deliverables</th>
+                                                <th>Completed</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Business case</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{cValue}}"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Feasibility Study Report</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{cValue}}"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Feasibility Study Report Approval</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{cValue}}"></i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h4 class="card-title"><span class="lstick"></span>Definition</h4>
+                                    </div>
+                                    <div class="ml-auto" style="display: block; width: 50px; height: 20px;cursor:pointer;">
+                                        <button class="pull-right btn btn-sm btn-rounded btn-success" onclick="updateDate('definition')">Done</button>
+                                    </div>
+                                </div>
+                                <div class="table-responsive m-t-20" id="tableTasks">
+                                    <table class="table vm no-th-brd no-wrap pro-of-month">
+                                        <thead>
+                                            <tr>
+                                                <th>Deliverables</th>
+                                                <th>Completed</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Project charter</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{dValue}}"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Statement of work</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{dValue}}"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Stakeholder register</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{dValue}}"></i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h4 class="card-title"><span class="lstick"></span>Planning</h4>
+                                    </div>
+                                    <div class="ml-auto" style="display: block; width: 50px; height: 20px;cursor:pointer;">
+                                        <button class="pull-right btn btn-sm btn-rounded btn-success" onclick="updateDate('planning')">Done</button>
+                                    </div>
+                                </div>
+                                <div class="table-responsive m-t-20" id="tableTasks">
+                                    <table class="table vm no-th-brd no-wrap pro-of-month">
+                                        <thead>
+                                            <tr>
+                                                <th>Deliverables</th>
+                                                <th>Completed</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Business requirements</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{pValue}}"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Requirements traceability matrix (RTM)</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{pValue}}"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td onclick="showRAM()" style="cursor: pointer">Responsibility assignment matrix (RAM)</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{pValue}}"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Quality plan</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{pValue}}"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Communication plan</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{pValue}}"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Project organisational structure</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{pValue}}"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Project schedule</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{pValue}}"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Project budget</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{pValue}}"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Work breakdown structure (WBS)</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{pValue}}"></i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h4 class="card-title"><span class="lstick"></span>Execution</h4>
+                                    </div>
+                                    <div class="ml-auto" style="display: block; width: 50px; height: 20px;cursor:pointer;">
+                                        <button class="pull-right btn btn-sm btn-rounded btn-success" onclick="updateDate('execution')">Done</button>
+                                    </div>
+                                </div>
+                                <div class="table-responsive m-t-20" id="tableTasks">
+                                    <table class="table vm no-th-brd no-wrap pro-of-month">
+                                        <thead>
+                                            <tr>
+                                                <th>Deliverables</th>
+                                                <th>Completed</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Project deliverables (work products)</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{eValue}}"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Project status reports</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{eValue}}"></i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h4 class="card-title"><span class="lstick"></span>Closing</h4>
+                                    </div>
+                                    <div class="ml-auto" style="display: block; width: 50px; height: 20px;cursor:pointer;">
+                                        <button class="pull-right btn btn-sm btn-rounded btn-success" onclick="updateDate('closing')">Done</button>
+                                    </div>
+                                </div>
+                                <div class="table-responsive m-t-20" id="tableTasks">
+                                    <table class="table vm no-th-brd no-wrap pro-of-month">
+                                        <thead>
+                                            <tr>
+                                                <th>Deliverables</th>
+                                                <th>Completed</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Completed project scope</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{clValue}}"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Customer acceptance document</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{clValue}}"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Lesson learned document</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{clValue}}"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Final project report</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{clValue}}"></i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h4 class="card-title"><span class="lstick"></span>Evaluation</h4>
+                                    </div>
+                                    <div class="ml-auto" style="display: block; width: 50px; height: 20px;cursor:pointer;">
+                                        <button class="pull-right btn btn-sm btn-rounded btn-success" onclick="updateDate('evaluation')">Done</button>
+                                    </div>
+                                </div>
+                                <div class="table-responsive m-t-20" id="tableTasks">
+                                    <table class="table vm no-th-brd no-wrap pro-of-month">
+                                        <thead>
+                                            <tr>
+                                                <th>Deliverables</th>
+                                                <th>Completed</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Project evaluation report</td>
+                                                <td style="padding-left: 45px;"><i class="pull-right font-14 p-2 label label-rounded label-{{evValue}}"></i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="message-layer" class="message-layer"></div>
+
+
+    <script src="../static/assets/plugins/jquery/jquery.min.js"></script>
+    <script src="../static/assets/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="../static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/js/perfect-scrollbar.jquery.min.js"></script>
+
+    <script src="../static/js/sidebarmenu.js"></script>
+    <script src="../static/js/custom.min.js"></script>
+    <script src="../static/js/utils.js"></script>
+
+
+    <script type="text/javascript">
+        function updateDate(phase){
+
+            var q = new Date();
+            var m = q.getMonth();
+            var d = q.getDay();
+            var y = q.getFullYear();
+
+            post('project/phase/update',
+                {'type': phase,
+                'projectID': window.location.search.substr(1).replace("projectID=",""),
+                'date': y+"-"+d+"-"+m
+                }, 
+                function(data){}, function(data){});
+        }
+
+        function showRAM(){
+            window.location = "http://127.0.0.1:5000/hm?projectID="+window.location.search.substr(1).replace("projectID=","")
+        }
+    </script>
+</body>
+
+</html>
