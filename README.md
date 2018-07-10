@@ -41,6 +41,6 @@ Set the following vars:
 ## Run
 From the main folder, open the terminal and run the following command:
 ``` 
-    set FLASK_APP=app.py flask run
+    FLASK_APP=app.py flask run
     
 ``` 
